@@ -1,0 +1,71 @@
+import type { EnergyResult } from "@/lib/energy/types";
+
+const METADATA = {
+  created_at_utc: "2026-09-18T01:39:55.726466+00:00",
+  dataset: "ResStock 2022 release, AMY2018 baseline",
+  data_type: "Modeled building profiles",
+  weather_alignment_verified: true,
+  weather_alignment_method:
+    "County weather series matched to consumption using county_code and exact hour-ending timestamps",
+  degree_day_base_f: 65.0,
+};
+
+export const listAccountsFixture: Extract<EnergyResult, { operation: "list_accounts" }> = {
+  operation: "list_accounts",
+  metadata: METADATA,
+  data: {
+    accounts: [
+      {
+        building_id: 100066,
+        account_id: "DEMO-100066",
+        state: "AL",
+        county_code: "01073",
+        building_type: "Single-Family Detached",
+        floor_area_sqft: 1690,
+        construction_vintage: "1950s",
+        heating_fuel: "Natural Gas",
+        heating_system: "Furnace",
+        cooling_system: null,
+        days_present: 365,
+        annual_electricity_kwh: 5468.044,
+        average_daily_kwh: 14.98,
+        peak_15min_average_kw: 18.77,
+        data_description: "Modeled hourly building energy simulation output.",
+      },
+      {
+        building_id: 102517,
+        account_id: "DEMO-102517",
+        state: "AL",
+        county_code: "01073",
+        building_type: "Single-Family Detached",
+        floor_area_sqft: 885,
+        construction_vintage: "1990s",
+        heating_fuel: "Natural Gas",
+        heating_system: "Furnace",
+        cooling_system: "Central AC",
+        days_present: 365,
+        annual_electricity_kwh: 5376.995,
+        average_daily_kwh: 14.73,
+        peak_15min_average_kw: 4.12,
+        data_description: "Modeled hourly building energy simulation output.",
+      },
+      {
+        building_id: 172016,
+        account_id: "DEMO-172016",
+        state: "AL",
+        county_code: "01073",
+        building_type: "Mobile Home",
+        floor_area_sqft: 885,
+        construction_vintage: "1970s",
+        heating_fuel: "Propane",
+        heating_system: "Furnace",
+        cooling_system: "Room AC",
+        days_present: 365,
+        annual_electricity_kwh: 5191.702,
+        average_daily_kwh: 14.22,
+        peak_15min_average_kw: 3.85,
+        data_description: "Modeled hourly building energy simulation output.",
+      },
+    ],
+  },
+};
